@@ -1,0 +1,11 @@
+<p id="notice">
+ <%=  flash[:notice] %>
+</p>
+
+<h2>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h3>
+<h5>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers,</h2>
+
+<h5>you can share and exchange your opinions , inpressions , and emotions<br>
+about various books!</h5>
+<%= link_to "Log in", new_user_session_path %>
+<%= link_to "Sign up", new_user_registration_path %>

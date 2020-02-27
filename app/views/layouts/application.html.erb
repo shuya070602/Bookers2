@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+    <div class="page-header">Bookers
+    <% if user_signed_in? %>
+
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        <%= link_to "Home", user_path(current_user) %>
+
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <%= link_to "Users", users_path %>
+
+        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+        <%= link_to "books", books_path %>
+
+        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+
+    <% else %>
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        <%= link_to "Home", "http://localhost:3000" %>
+
+        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+        <%= link_to "About", "http://localhost:3000/home/about" %>
+
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+        <%= link_to "sign up", new_user_registration_path %>
+
+        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+        <%= link_to "login", new_user_session_path %>
+    <% end %>
+  </div>
+  </header>
+  <%= yield %>
+  <footer>CopyRight<br> Infratop.inc
+  </footer>
+  </body>
+</html>
