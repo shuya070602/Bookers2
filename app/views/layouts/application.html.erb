@@ -11,7 +11,7 @@
 
   <body>
     <header>
-    <div class="page-header">Bookers
+    <div class="page-header" style="background-color: black">Bookers
     <% if user_signed_in? %>
 
         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
@@ -42,7 +42,9 @@
   </div>
   </header>
   <%= yield %>
-  <footer>CopyRight<br> Infratop.inc
+  <footer>
+   <div class="col-xs-3 col-xs-offset-9">CopyRight Infratop.inc
+   </div>
   </footer>
   </body>
 </html>
