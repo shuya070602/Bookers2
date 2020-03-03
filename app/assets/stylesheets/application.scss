@@ -15,3 +15,22 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizeing: boder-box;
+  color: #6c6b6b;
+}
+
+.navber-inverse {
+  background-color: black;
+}
+
+.navbar-right {
+  float: right !important;
+}
+
+a.my-bt:hover .glyphicon {
+    color: #fff;
+}

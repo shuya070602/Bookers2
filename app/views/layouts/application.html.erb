@@ -11,34 +11,33 @@
 
   <body>
     <header>
-    <div class="page-header" style="background-color: black">Bookers
+    <header class="navber navber-fixed-top navber-inverse">
+     <div class="container">
+      <nav class="nav navber-nav navber-left">
+      <span>Bookers</span></nav>
+      <nav>
+      <ul class="nav navber-nav navber-right"></ul>
     <% if user_signed_in? %>
 
-        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-        <%= link_to "Home", user_path(current_user) %>
+        <%= link_to user_path(current_user), class: "my-bt" do%><i class="glyphicon glyphicon-home"></i> Home<% end %>
 
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-        <%= link_to "Users", users_path %>
+        <%= link_to user_path, class: "my-bt" do%><i class="glyphicon glyphicon-user"></i> Users<% end %>
 
-        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-        <%= link_to "books", books_path %>
+        <%= link_to books_path, class: "my-bt" do%><i class="glyphicon glyphicon-book"></i> books<% end %>
 
-        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-        <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        <%= link_to destroy_user_session_path, class: "my-bt" do%><i class="glyphicon glyphicon-log-out"></i> logout<% end %>
 
     <% else %>
-        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-        <%= link_to "Home", "http://localhost:3000" %>
+        <%= link_to "http://localhost:3000", class: "my-bt" do%><i class="glyphicon glyphicon-home"></i> Home<% end %>
 
-        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-        <%= link_to "About", "http://localhost:3000/home/about" %>
+        <%= link_to "http://localhost:3000/home/about", class: "my-bt" do%><i class="glyphicon glyphicon-link"></i> About<% end %>
 
-        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        <%= link_to "sign up", new_user_registration_path %>
+        <%= link_to new_user_registration_path, class: "my-bt" do%><i class="glyphicon glyphicon-edit"></i> sign up<% end %>
 
-        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-        <%= link_to "login", new_user_session_path %>
+        <%= link_to new_user_session_path, class: "my-bt" do%><i class="glyphicon glyphicon-log-in"></i> login<% end %>
+
     <% end %>
+    </nav>
   </div>
   </header>
   <%= yield %>
