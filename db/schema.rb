@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2020_02_28_014227) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "introduction"
     t.string "profile_image_id"
+    t.text "introduction"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

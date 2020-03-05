@@ -13,19 +13,19 @@
     <header>
     <header class="navber navber-fixed-top navber-inverse">
      <div class="container">
-      <nav class="nav navber-nav navber-left">
+      <nav class="navber-left">
       <span>Bookers</span></nav>
       <nav>
-      <ul class="nav navber-nav navber-right"></ul>
+      <ul class="navber-right">
     <% if user_signed_in? %>
 
         <%= link_to user_path(current_user), class: "my-bt" do%><i class="glyphicon glyphicon-home"></i> Home<% end %>
 
-        <%= link_to user_path, class: "my-bt" do%><i class="glyphicon glyphicon-user"></i> Users<% end %>
+        <%= link_to users_path, class: "my-bt" do%><i class="glyphicon glyphicon-user"></i> Users<% end %>
 
         <%= link_to books_path, class: "my-bt" do%><i class="glyphicon glyphicon-book"></i> books<% end %>
 
-        <%= link_to destroy_user_session_path, class: "my-bt" do%><i class="glyphicon glyphicon-log-out"></i> logout<% end %>
+        <%= link_to destroy_user_session_path, method: :delete, class: "my-bt" do%><i class="glyphicon glyphicon-log-out"></i> logout<% end %>
 
     <% else %>
         <%= link_to "http://localhost:3000", class: "my-bt" do%><i class="glyphicon glyphicon-home"></i> Home<% end %>
@@ -37,6 +37,7 @@
         <%= link_to new_user_session_path, class: "my-bt" do%><i class="glyphicon glyphicon-log-in"></i> login<% end %>
 
     <% end %>
+    </ul>
     </nav>
   </div>
   </header>
