@@ -1,10 +1,14 @@
 <h2>User info</h2>
 
-<%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-<h4>name</h4>
-<%= user.name %>
-<h4>introduction</h4>
-<%= user.introduction %>
+<%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:"100x100" %>
+<table class="table table-condensed">
+<tr>
+<th>name</th>
+<td><%= user.name %></td></tr>
+<tr>
+<th>introduction</th>
+<td><%= user.introduction %></td></tr>
+</table>
 <% if user == current_user %>
 <%= link_to(edit_user_path(user.id)) do %>
 <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
@@ -25,5 +29,5 @@
    <%= f.text_field :title %>
    <h4>Opinion</h4>
    <%= f.text_area :body %>
-   <br><%= f.submit 'Create Book' %>
+   <br><%= f.submit 'Create Book', class: "btn btn-primary" %>
 <% end %>

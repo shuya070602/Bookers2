@@ -1,4 +1,5 @@
-<h1>User info</h1>
+<div class="container">
+<h2>User info</h2>
 <%= form_for (@user) do |f| %>
 <% if @user.errors.any? %>
 <%= @user.errors.count %> errors prohibited this obj from being saved:
@@ -8,12 +9,12 @@
 <% end %>
 <% end %>
 <%= form_for (@user) do |f| %>
-<h2>Name</h2><br>
+<h5>Name</h5>
 <%= f.text_field :name %>
-<h2>Image</h2>
+<h5>Image</h5>
 
 <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
-<h2>Introduction</h2>
-<%= f.text_field :introduction %>
+<h5>Introduction</h5>
+<%= f.text_field :introduction %><br>
 <%= f.submit 'Update User' %>
 <% end %>

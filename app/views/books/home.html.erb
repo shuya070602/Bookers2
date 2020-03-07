@@ -2,10 +2,12 @@
  <%=  flash[:notice] %>
 </p>
 
-<h2>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h3>
-<h5>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers,</h2>
+<div class="message col-md-offset-4 col-md-6">
+<h1>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers  !!</h1>
+<h5>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers,</h5>
 
-<h5>you can share and exchange your opinions , inpressions , and emotions<br>
+<h5>you can share and exchange your opinions , inpressions , and emotions<br><br>
 about various books!</h5>
-<%= link_to "Log in", new_user_session_path %>
-<%= link_to "Sign up", new_user_registration_path %>
+</div>
+<%= link_to "Log in", new_user_session_path, class:"btn btn-info col-xs-offset-4 col-xs-3" %><br>
+<%= link_to "Sign up", new_user_registration_path, class:"btn btn-success col-xs-3 col-xs-offset-4" %>
